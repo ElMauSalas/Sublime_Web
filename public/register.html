@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro</title>
+  
+  <!-- Bootstrap + estilos personalizados -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="register-container d-flex justify-content-center align-items-center vh-100">
+    <div class="register-box p-5 shadow rounded">
+      <h1 class="text-center mb-4 text-primary">Registrarse</h1>
+
+      <form id="form-register">
+        <div class="form-group">
+          <label for="nombre" class="font-weight-bold">Nombre</label>
+          <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Ingresa tu nombre" autocomplete="name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email" class="font-weight-bold">Email</label>
+          <input type="email" id="email" name="email" class="form-control" placeholder="Ingresa tu email" autocomplete="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="telefono" class="font-weight-bold">Teléfono</label>
+          <input type="tel" id="telefono" name="telefono" class="form-control" placeholder="Ingresa tu teléfono" autocomplete="tel" inputmode="tel" required>
+        </div>
+
+        <div class="form-group">
+          <label for="usuario" class="font-weight-bold">Usuario</label>
+          <input type="text" id="usuario" name="usuario" class="form-control" placeholder="Ingresa tu usuario" autocomplete="username" required>
+        </div>
+
+        <div class="form-group">
+          <label for="contraseña" class="font-weight-bold">Contraseña</label>
+          <input type="password" id="contraseña" name="contraseña" class="form-control" placeholder="Ingresa tu contraseña" autocomplete="new-password" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block mt-4">Registrarse</button>
+
+        <p id="mensaje" class="text-danger mt-2"></p>
+
+        <a href="login.html" class="btn btn-secondary btn-block mt-2">Cancelar</a>
+      </form>
+    </div>
+  </div>
+
+  <script src="register.js"></script>
+</body>
+</html>
