@@ -3,8 +3,14 @@ const mysql = require("mysql2");
 const session = require("express-session");
 const path = require("path");
 const nodemailer = require("nodemailer");
+const multer = require("multer");
+const upload = multer({ dest: "uploads/" });
+const fs = require("fs");
+
 
 const app = express();
+
+
 
 // Configuraciones iniciales
 app.use(express.static("public"));
@@ -113,8 +119,13 @@ app.use("/", carritoRoutes);
 const contactoRoutes = require("./routes/contacto");
 app.use("/", contactoRoutes);
 
+// ========= IMPORTAR Y USAR RUTAS DE AUTH =========
 const authRoutes = require("./routes/auth")(db);
 app.use("/", authRoutes);
+
+// ========= IMPORTAR Y USAR RUTAS DE RECUPERACION =========
+const recuperacionRoutes = require("./routes/recuperacion")(db);
+app.use("/", recuperacionRoutes);
 
 // Iniciar servidor
 app.listen(3000, () => {

@@ -4,7 +4,7 @@ const nodemailer = require("nodemailer");
 module.exports = (db) => {
   const router = express.Router();
 
-  // CAMBIAR CONTRASEÑA Y ENVIAR CORREO DE CONFIRMACIÓN
+  // Ruta para cambiar la contraseña y enviar confirmación por correo
   router.post("/cambiar-contrasena", (req, res) => {
     const { usuario, nuevaContrasena } = req.body;
 
@@ -12,10 +12,10 @@ module.exports = (db) => {
       return res.status(400).json({ success: false, message: "Faltan datos." });
     }
 
-    const queryUpdate = "UPDATE usuarios SET contraseña = ? WHERE usuario = ?";
+    const queryUpdate = "UPDATE usuarios SET contrasena = ? WHERE usuario = ?";
     db.query(queryUpdate, [nuevaContrasena, usuario], (err, results) => {
       if (err) {
-        console.error("Error al cambiar contraseña:", err);
+        console.error("❌ Error al cambiar la contraseña:", err);
         return res.status(500).json({ success: false, message: "Error interno del servidor." });
       }
 
@@ -23,21 +23,20 @@ module.exports = (db) => {
         return res.status(404).json({ success: false, message: "Usuario no encontrado." });
       }
 
-      // Buscar el email del usuario
+      // Buscar email del usuario para enviar confirmación
       const queryEmail = "SELECT email FROM usuarios WHERE usuario = ?";
       db.query(queryEmail, [usuario], (err, results) => {
         if (err || results.length === 0) {
-          return res.json({ success: true, message: "Contraseña actualizada. No se pudo enviar correo." });
+          return res.json({ success: true, message: "Contraseña actualizada, pero no se envió el correo." });
         }
 
         const destinatario = results[0].email;
 
-        // Enviar correo de confirmación
         const transporter = nodemailer.createTransport({
           service: "gmail",
           auth: {
-            user: "maussp21@gmail.com", // 🔒 tu correo
-            pass: "wdjd fmia shkt pdmt" // 🔒 contraseña de aplicación (no la normal)
+            user: "maussp21@gmail.com",
+            pass: "wdjd fmia shkt pdmt" // tu contraseña de aplicación de Gmail
           }
         });
 
@@ -50,8 +49,8 @@ module.exports = (db) => {
 
         transporter.sendMail(mailOptions, (error, info) => {
           if (error) {
-            console.error("Error al enviar correo:", error);
-            return res.json({ success: true, message: "Contraseña actualizada. Error al enviar correo." });
+            console.error("❌ Error al enviar el correo:", error);
+            return res.json({ success: true, message: "Contraseña actualizada, pero error al enviar correo." });
           }
 
           return res.json({ success: true, message: "Contraseña actualizada y correo enviado." });

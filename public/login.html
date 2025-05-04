@@ -11,35 +11,33 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 
-<body>
-  <div class="login-container d-flex justify-content-center align-items-center vh-100">
-    <div class="login-box p-5 shadow rounded">
-      <h1 class="text-center mb-4 text-primary">Iniciar Sesión</h1>
+<body class="auth-container">
+  <div class="auth-box">
+    <h1 class="text-center mb-4">Iniciar Sesión</h1>
 
-      <form id="form-login">
-        <div class="form-group">
-          <label for="usuario" class="font-weight-bold">Usuario</label>
-          <input type="text" id="usuario" name="usuario" class="form-control" placeholder="Ingresa tu usuario" required>
-        </div>
+    <form id="form-login">
+      <div class="form-group">
+        <label for="usuario">Usuario</label>
+        <input type="text" id="usuario" name="usuario" class="form-control" required placeholder="Ingresa tu usuario">
+      </div>
 
-        <div class="form-group">
-          <label for="contraseña" class="font-weight-bold">Contraseña</label>
-          <input type="password" id="contraseña" name="contraseña" class="form-control" placeholder="Ingresa tu contraseña" required>
-        </div>
+      <div class="form-group">
+        <label for="contraseña">Contraseña</label>
+        <input type="password" id="contraseña" name="contraseña" class="form-control" required placeholder="Ingresa tu contraseña">
+      </div>
 
-        <button type="submit" class="btn btn-primary btn-block mt-4">Iniciar sesión</button>
+      <button type="submit" class="btn btn-primary">Iniciar sesión</button>
 
-        <p id="mensaje" class="text-danger mt-3 text-center"></p>
+      <p id="mensaje" class="text-danger mt-3 text-center"></p>
 
-        <div class="text-center mt-4">
-          <a href="register.html" class="btn btn-link">¿No tienes cuenta? Regístrate aquí</a><br>
-          <a href="cambiar_contrasena.html" class="btn btn-link text-warning font-weight-bold">¿Olvidaste tu contraseña?</a>
-        </div>
-      </form>
-    </div>
+      <div class="extra-links mt-3 d-grid gap-2">
+        <a href="register.html" class="btn btn-outline-secondary">¿No tienes cuenta? Regístrate</a>
+        <a href="cambiar_contrasena.html" class="btn btn-outline-warning mt-2">¿Olvidaste tu contraseña?</a>
+        <a href="index.html" class="btn btn-outline-danger mt-3">Cancelar</a>
+      </div>
+    </form>
   </div>
 
-  <!-- Script principal -->
   <script src="login.js"></script>
 </body>
 </html>

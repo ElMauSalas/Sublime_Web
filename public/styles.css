@@ -492,44 +492,68 @@ html {
 }
 
 /* ==========================
-   FORMULARIOS (LOGIN Y REGISTRO)
+   LOGIN Y REGISTRO UNIFICADOS
    ========================== */
 
-.login-container, .register-container {
-    background-color: var(--color-fondo); /* Fondo general */
+   .auth-container {
+    background-color: var(--color-fondo);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 20px;
 }
 
-/* Caja del formulario */
-.login-box, .register-box {
-    background-color: #fff; /* Fondo blanco */
-    border-radius: 15px; /* Bordes redondeados */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra */
-    max-width: 400px;
+.auth-box {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     width: 100%;
+    max-width: 400px;
 }
 
-/* Títulos y etiquetas */
-.login-box h1, .register-box h1 {
+.auth-box h1 {
     font-size: 2rem;
     font-weight: 700;
-    color: var(--color-primario); /* Color principal */
+    color: var(--color-primario);
+    margin-bottom: 20px;
+    text-align: center;
 }
 
-.login-box label, .register-box label {
-    color: var(--color-texto); /* Texto oscuro */
+.auth-box label {
+    color: var(--color-texto);
+    font-weight: 600;
 }
 
-/* Botón de enviar */
-.login-box .btn-primary, .register-box .btn-primary {
-    background-color: var(--color-primario); /* Color principal */
+.auth-box .form-control {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid var(--color-borde);
+}
+
+.auth-box .btn {
+    background-color: var(--color-primario);
+    color: #fff;
+    font-weight: bold;
     border: none;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    margin-top: 15px;
     transition: background-color 0.3s ease;
 }
 
-.login-box .btn-primary:hover, .register-box .btn-primary:hover {
-    background-color: var(--color-terciario); /* Color terciario */
-    color: var(--color-texto-claro); /* Texto claro */
+.auth-box .btn:hover {
+    background-color: var(--color-terciario);
+    color: var(--color-texto-claro);
+}
+
+.auth-box .extra-links {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.9rem;
 }
 
 /* Inputs */
@@ -704,6 +728,98 @@ html {
 
 .btn-enviar:hover {
     background-color: var(--color-secundario); /* Color secundario al pasar el mouse */
+}
+
+#preview img {
+    border: 2px solid var(--color-borde, #ccc);
+    border-radius: 10px;
+    padding: 5px;
+}
+
+/* ==========================
+   IMAGEN ADJUNTA EN FORMULARIO DE CONTACTO
+   ========================== */
+
+/* Input de archivo con estilo */
+.formulario-contacto .form-control-file {
+    border: 2px dashed var(--color-primario); /* Borde punteado */
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.formulario-contacto .form-control-file:hover {
+    border-color: var(--color-secundario);
+    background-color: #fdf4e3;
+}
+
+/* Etiqueta del campo de imagen */
+.formulario-contacto label[for="imagen"] {
+    font-weight: 600;
+    color: var(--color-texto);
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* ==========================
+   CAMBIO DE CONTRASEÑA
+   ========================== */
+   .cambio-container {
+    background-color: var(--color-secundario);
+    padding: 40px 20px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cambio-box {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 100%;
+}
+
+.cambio-box h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--color-primario);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.cambio-box label {
+    font-weight: bold;
+    color: var(--color-texto);
+}
+
+.cambio-box .form-control {
+    border-radius: 10px;
+    border: 1px solid var(--color-secundario);
+    padding: 10px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.cambio-box .btn {
+    background-color: var(--color-primario);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.cambio-box .btn:hover {
+    background-color: var(--color-terciario);
+    color: var(--color-texto);
 }
 
 

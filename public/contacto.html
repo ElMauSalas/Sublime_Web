@@ -4,21 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto</title>
-    <!-- Bootstrap 4.5.2 y tu CSS -->
+    <!-- Bootstrap y estilos personalizados -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles.css"> <!-- Aquí están tus clases personalizadas -->
+    <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <!-- Barra de navegación -->
-    <!-- (igual que en productos.html) -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html#inicio">
                 <img src="Imagenes/Logo.png" alt="Logo" class="logo-img">
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -28,9 +27,7 @@
                     <li class="nav-item"><a class="nav-link" href="productos.html">Productos</a></li>
                     <li class="nav-item"><a class="nav-link" href="diseños.html">Diseños</a></li>
                     <li class="nav-item" id="carrito-nav-item" style="display: none;">
-                        <a class="nav-link" href="carrito.html">
-                            <i class="fas fa-shopping-cart"></i>
-                        </a>
+                        <a class="nav-link" href="carrito.html"><i class="fas fa-shopping-cart"></i></a>
                     </li>
                     <li class="nav-item"><a href="login.html" class="btn btn-login btn-nav">Iniciar sesión</a></li>
                     <li class="nav-item"><a href="register.html" class="btn btn-register btn-nav">Registrarse</a></li>
@@ -39,36 +36,37 @@
         </div>
     </nav>
 
-    <!-- Contenido de contacto -->
-    <div class="container mt-5 pt-5 d-flex flex-column align-items-center">
-        <br>
-        <br>
-        <h1 class="mb-4 titulo-contacto" style="font-size: 3rem;">Contáctanos</h1>
-        
-        <div id="mensaje-exito" class="alert alert-success d-none w-100 text-center" role="alert">
-            ¡Gracias por contactarnos! Te responderemos pronto.
-        </div>
-    
-        <form action="/contacto" method="POST" id="form-contacto" class="formulario-contacto w-100" style="max-width: 700px;">
-            <div class="form-group">
-                <label for="nombre" class="form-label">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Tu nombre" required>
+    <!-- Formulario de contacto -->
+    <div class="container mt-5 pt-5 d-flex justify-content-center">
+        <form id="form-contacto" action="/contacto" method="POST" enctype="multipart/form-data" class="formulario-contacto mx-auto mt-5">
+            <h1 class="titulo-contacto text-center mb-4">Contáctanos</h1>
+          
+            <div class="mb-3">
+              <label for="nombre" class="form-label">Nombre:</label>
+              <input type="text" id="nombre" name="nombre" class="form-control" required>
             </div>
-    
-            <div class="form-group">
-                <label for="email" class="form-label">Correo electrónico:</label>
-                <input type="email" id="email" name="email" class="form-control" placeholder="Tu correo electrónico" required>
+          
+            <div class="mb-3">
+              <label for="email" class="form-label">Correo electrónico:</label>
+              <input type="email" id="email" name="email" class="form-control" required>
             </div>
-    
-            <div class="form-group">
-                <label for="mensaje" class="form-label">Mensaje:</label>
-                <textarea id="mensaje" name="mensaje" class="form-control" rows="6" placeholder="Escribe tu mensaje aquí..." required></textarea>
+          
+            <div class="mb-3">
+              <label for="mensaje" class="form-label">Mensaje:</label>
+              <textarea id="mensaje" name="mensaje" class="form-control" rows="5" required></textarea>
             </div>
-    
-            <button type="submit" class="btn btn-enviar mt-3 w-100">Enviar</button>
+          
+            <div class="mb-3">
+              <label for="imagenes" class="form-label">Agregar imágenes (opcional):</label>
+              <input type="file" name="imagenes" id="imagenes" class="form-control" multiple>
+              <div id="preview" class="d-flex flex-wrap mt-3"></div>
+              <button type="button" class="btn btn-secondary mt-2" onclick="document.getElementById('imagenes').click()">Borrar y agregar nuevas imágenes</button>
+            </div>
+          
+            <button type="submit" class="btn btn-enviar w-100">Enviar</button>
+            <div id="mensaje-exito" class="alert alert-success mt-3 d-none">¡Gracias por contactarnos! Te responderemos pronto.</div>
         </form>
     </div>
-    
 
     <!-- Pie de página -->
     <footer id="footer" class="py-5">
