@@ -15,14 +15,6 @@
 /* ==========================
    ESTILOS GENERALES
    ========================== */
-body {
-    font-family: 'Poppins', sans-serif; /* Fuente principal */
-    margin: 0; /* Elimina márgenes predeterminados */
-    padding: 0; /* Elimina relleno predeterminado */
-    background-color: var(--color-secundario); /* Fondo general */
-    color: var(--color-texto); /* Color del texto */
-    overflow-x: hidden; /* Evita desbordamiento horizontal */
-}
 
 ul {
     padding: 0; /* Elimina relleno de listas */
@@ -686,14 +678,14 @@ html {
 /* Estilo para el título del formulario */
 .titulo-contacto {
     font-size: 2.5rem;
-    color: var(--color-primario); /* Usa el color principal de tu web */
+    color: var(--color-primario); 
     font-weight: bold;
     text-transform: uppercase;
 }
 
 /* Estilo para el formulario */
 .formulario-contacto {
-    background-color: var(--color-fondo-claro); /* Fondo claro relacionado con tu web */
+    background-color: rgb(255, 255, 255); /* Fondo claro relacionado con tu web */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
@@ -712,6 +704,7 @@ html {
     border-radius: 5px;
     padding: 10px;
     font-size: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* ← SOMBRA */
 }
 
 /* Estilo para el botón de envío */
@@ -822,91 +815,133 @@ html {
     color: var(--color-texto);
 }
 
-/* Estilos para admin.html */
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f8f9fa;
-    margin: 0;
-    padding: 2rem;
-    color: #333;
-  }
-  
-  h1, h2 {
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-  
-  form#form-agregar {
-    max-width: 600px;
-    margin: 0 auto 2rem auto;
-    background-color: white;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  form#form-agregar input,
-  form#form-agregar textarea,
-  form#form-agregar select {
-    width: 100%;
-    margin-bottom: 1rem;
-    padding: 0.75rem;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 1rem;
-  }
-  
-  form#form-agregar button {
-    width: 100%;
-    padding: 0.75rem;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    font-size: 1rem;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  form#form-agregar button:hover {
-    background-color: #0056b3;
-  }
-  
-  #lista-productos {
-    max-width: 800px;
-    margin: 0 auto;
-    background-color: white;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  }
-  
-  #lista-productos p {
-    margin: 0.5rem 0;
-  }
-  
-  #lista-productos button {
-    background-color: #dc3545;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 0.9rem;
-  }
-  
-  #lista-productos button:hover {
-    background-color: #bd2130;
-  }
+/* ==========================
+   ADMIN - GESTIÓN DE PRODUCTOS
+   ========================== */
 
-  .btn-admin {
-    background-color: white;
-    color: var(--color-primario);
-    margin-left: 0.9rem;
-  }
-  .btn-admin:hover {
-    background-color: white;
-  }
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--color-fondo);
+  margin: 0;
+  padding: 2rem;
+  color: var(--color-texto);
+}
+
+h1, h2 {
+  text-align: center;
+  color: var(--color-primario);
+  margin-bottom: 2rem;
+}
+
+/* Formulario de productos */
+form#form-agregar {
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+form#form-agregar input,
+form#form-agregar textarea,
+form#form-agregar select {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border: 1px solid var(--color-gris-oscuro);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+form#form-agregar input[type="file"] {
+  padding: 0.5rem;
+  background-color: #f9f9f9;
+}
+
+form#form-agregar button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--color-primario);
+  color: #fff;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form#form-agregar button:hover {
+  background-color: var(--color-terciario);
+  color: var(--color-texto);
+}
+
+/* Lista de productos */
+#lista-productos {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+#lista-productos p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: var(--color-texto);
+}
+
+#lista-productos button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+#lista-productos button:hover {
+  background-color: #bd2130;
+}
+
+/* Botón admin reutilizable */
+.btn-admin {
+  background-color: white;
+  color: var(--color-primario);
+  margin-left: 0.9rem;
+}
+.btn-admin:hover {
+  background-color: white;
+}
+
+#form-agregar button {
+  margin-bottom: 10px;
+}
+
+
+  body {
+    font-family: 'Poppins', sans-serif; /* Fuente principal */
+    margin: 0; /* Elimina márgenes predeterminados */
+    padding: 0; /* Elimina relleno predeterminado */
+    background-color: var(--color-fondo); /* Fondo general */
+    color: var(--color-texto); /* Color del texto */
+    overflow-x: hidden; /* Evita desbordamiento horizontal */
+}
+
+
+
+
+
+
+  
+  
+
   
   
   

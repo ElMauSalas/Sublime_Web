@@ -98,6 +98,8 @@ app.post("/register", (req, res) => {
   });
 });
 
+app.use("/uploads", express.static("uploads"));
+
 // ========= USER-DATA =========
 app.get("/user-data", (req, res) => {
   if (req.session.user) {

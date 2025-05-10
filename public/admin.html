@@ -7,7 +7,7 @@
 </head>
 <body>
   <h1>Gestión de productos</h1>
-
+  
   <form id="form-agregar" enctype="multipart/form-data">
     <input type="text" name="nombre" placeholder="Nombre" required />
     <textarea name="descripcion" placeholder="Descripción" required></textarea>
@@ -18,7 +18,8 @@
       <option value="ropa">Ropa</option>
     </select>
     <input type="file" name="imagen" required />
-    <button type="submit">Agregar producto</button>
+    <button type="submit" class="btn btn-nav mb-2">Agregar producto</button>
+    <button type="button" class="btn btn-nav" onclick="irYRecargar()">Regresar</button>
   </form>
 
   <hr />
