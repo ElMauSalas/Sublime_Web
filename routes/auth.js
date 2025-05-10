@@ -36,7 +36,7 @@ module.exports = (db) => {
           service: "gmail",
           auth: {
             user: "maussp21@gmail.com",
-            pass: "wdjd fmia shkt pdmt" // tu contraseña de aplicación de Gmail
+            pass: "wdjd fmia shkt pdmt"
           }
         });
 
@@ -58,6 +58,55 @@ module.exports = (db) => {
       });
     });
   });
+
+  // ✅ Ruta para cerrar sesión correctamente
+  router.get("/logout", (req, res) => {
+    req.session.destroy(err => {
+      if (err) {
+        return res.status(500).send("Error al cerrar sesión");
+      }
+      res.clearCookie("connect.sid", {
+        path: "/",
+        httpOnly: true,
+        sameSite: "lax"
+      });
+      res.sendStatus(200); // ✅ NO redirección para que no guarde cookie
+    });
+  });
+
+  // Ruta para verificar si hay sesión activa
+  router.get("/user-data", (req, res) => {
+    if (req.session && req.session.user) {
+      console.log("📦 Sesión activa:", req.session.user); // Agregado para depurar
+      res.json({ success: true, user: req.session.user });
+    } else {
+      res.json({ success: false });
+    }
+  });
+
+
+  // Ruta de login
+router.post("/login", (req, res) => {
+  const { usuario, contrasena } = req.body;
+
+  const query = `SELECT id AS usuario_id, nombre, rol FROM usuarios WHERE usuario = ? AND contrasena = ?`;
+  db.query(query, [usuario, contrasena], (err, results) => {
+    if (err) {
+      console.error("Error en el login:", err);
+      return res.status(500).json({ success: false, message: "Error en el servidor" });
+    }
+
+    if (results.length === 0) {
+      return res.status(401).json({ success: false, message: "Usuario o contraseña incorrectos" });
+    }
+
+    const { usuario_id, nombre, rol } = results[0];
+    req.session.user = { id: usuario_id, nombre, rol };
+
+    res.json({ success: true, usuario_id, nombre, rol });
+  });
+});
+
 
   return router;
 };

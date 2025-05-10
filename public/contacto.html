@@ -25,12 +25,10 @@
                     <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link" href="index.html#nosotros">Nosotros</a></li>
                     <li class="nav-item"><a class="nav-link" href="productos.html">Productos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="diseños.html">Diseños</a></li>
                     <li class="nav-item" id="carrito-nav-item" style="display: none;">
                         <a class="nav-link" href="carrito.html"><i class="fas fa-shopping-cart"></i></a>
                     </li>
-                    <li class="nav-item"><a href="login.html" class="btn btn-login btn-nav">Iniciar sesión</a></li>
-                    <li class="nav-item"><a href="register.html" class="btn btn-register btn-nav">Registrarse</a></li>
+                    <!-- Los botones de sesión se agregan dinámicamente vía JS -->
                 </ul>
             </div>
         </div>
@@ -58,7 +56,7 @@
           
             <div class="mb-3">
               <label for="imagenes" class="form-label">Agregar imágenes (opcional):</label>
-              <input type="file" name="imagenes" id="imagenes" class="form-control" multiple>
+              <input type="file" id="imagenes" name="imagenes" multiple>
               <div id="preview" class="d-flex flex-wrap mt-3"></div>
               <button type="button" class="btn btn-secondary mt-2" onclick="document.getElementById('imagenes').click()">Borrar y agregar nuevas imágenes</button>
             </div>

@@ -17,11 +17,15 @@ app.use(express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Configuración de sesión
+// ✅ Configuración de sesión corregida
 app.use(session({
   secret: "clave_secreta_segura",
   resave: false,
-  saveUninitialized: true,
+  saveUninitialized: false,
+  cookie: {
+    httpOnly: true,
+    sameSite: "lax"
+  }
 }));
 
 // Conexión a la base de datos
@@ -44,7 +48,8 @@ db.connect((err) => {
 app.post("/login", (req, res) => {
   const { usuario, contrasena } = req.body;
 
-  const query = `SELECT id AS usuario_id, nombre FROM usuarios WHERE usuario = ? AND contrasena = ?`;
+  // ✅ INCLUYE el campo 'rol' en el SELECT
+  const query = `SELECT id AS usuario_id, nombre, rol FROM usuarios WHERE usuario = ? AND contrasena = ?`;
   db.query(query, [usuario, contrasena], (err, results) => {
     if (err) {
       console.error("Error en el login:", err);
@@ -55,12 +60,13 @@ app.post("/login", (req, res) => {
       return res.status(401).json({ success: false, message: "Usuario o contraseña incorrectos" });
     }
 
-    const { usuario_id, nombre } = results[0];
-    req.session.user = { id: usuario_id, nombre: nombre };
+    const { usuario_id, nombre, rol } = results[0]; // ✅ Extrae 'rol'
+    req.session.user = { id: usuario_id, nombre, rol }; // ✅ Guarda 'rol' en sesión
 
-    res.json({ success: true, usuario_id, nombre });
+    res.json({ success: true, usuario_id, nombre, rol }); // ✅ También lo devuelves
   });
 });
+
 
 // ========= LOGOUT =========
 app.get("/logout", (req, res) => {
