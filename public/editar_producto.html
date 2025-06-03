@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Producto</title>
+    <link rel="stylesheet" href="/styles.css"> 
+</head>
+<body>
+    <div class="edit-page-container">
+        <div class="form-container">
+            <h1>Editar Producto</h1>
+            <form id="form-editar" enctype="multipart/form-data">
+                <input type="hidden" name="id" id="producto-id">
+                <div class="form-group">
+                    <label for="nombre">Nombre del Producto</label>
+                    <input type="text" id="nombre" name="nombre" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="descripcion">Descripción</label>
+                    <textarea id="descripcion" name="descripcion" rows="4" class="form-control" required></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="precio">Precio</label>
+                        <input type="number" id="precio" name="precio" step="0.01" class="form-control" required>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="cantidad">Cantidad</label>
+                        <input type="number" id="cantidad" name="cantidad" class="form-control" required>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="categoria">Categoría</label>
+                        <input type="text" id="categoria" name="categoria" class="form-control" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="tallas_disponibles">Tallas Disponibles</label>
+                    <input type="text" id="tallas_disponibles" name="tallas_disponibles" class="form-control" placeholder="Ej: S,M,L,XL">
+                </div>
+                
+                <div class="form-group">
+                    <label>Imagen del Producto</label>
+                    <div class="image-upload-box">
+                        <div class="image-preview-container">
+                            <p>Imagen actual:</p>
+                            <img id="imagen-preview" src="" alt="Imagen actual">
+                        </div>
+                        <div class="file-input-container">
+                            <p>Seleccionar nueva imagen (opcional):</p>
+                            <input type="file" id="imagen" name="imagen" class="form-control-file" accept="image/*">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-actualizar">Actualizar Producto</button>
+                    <a href="/admin.html" class="btn-cancelar">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="/editar_producto.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

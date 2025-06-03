@@ -1,0 +1,1425 @@
+/* ==========================
+   VARIABLES Y PALETA DE COLORES
+   ========================== */
+:root {
+    --color-primario: #99154E; /* Color principal (rojo oscuro) */
+    --color-secundario: #FFE898; /* Color secundario (amarillo claro) */
+    --color-terciario: #FFBBCC; /* Color terciario (rosa claro) */
+    --color-fondo: #FFE898; /* Fondo general */
+    --color-texto: #333; /* Texto oscuro */
+        --color-texto-claro: #fff; /* Texto claro */
+        --color-gris: #ddd; /* Gris claro */
+        --color-gris-oscuro: #aaa; /* Gris oscuro */
+    }
+
+    /* ==========================
+    ESTILOS GENERALES
+    ========================== */
+
+    ul {
+        padding: 0; /* Elimina relleno de listas */
+        list-style: none; /* Elimina viñetas de listas */
+    }
+
+    ul li {
+        font-size: 0.9rem; /* Tamaño del texto */
+        line-height: 1.8; /* Altura de línea */
+        color: var(--color-gris); /* Color gris claro */
+    }
+
+    ul li strong {
+        color: var(--color-texto-claro); /* Texto resaltado en blanco */
+    }
+
+.img-fluid {
+    max-width: 100%; /* Asegura que las imágenes no excedan el ancho del contenedor */
+    height: auto; /* Mantiene la proporción de las imágenes */
+}
+
+/* Contenedor principal */
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%; /* Asegura que no exceda el ancho de la pantalla */
+    overflow-x: hidden; /* Evita desbordamiento horizontal */
+}
+
+/* ==========================
+   ENCABEZADO Y NAVEGACIÓN
+   ========================== */
+.head {
+    background-color: #fff; /* Fondo blanco */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.logo a {
+    display: flex; /* Alinea elementos en fila */
+    align-items: center; /* Centra verticalmente */
+}
+
+.logo-img {
+    width: 150px; /* Ancho de la imagen del logo */
+    height: 96px; /* Alto de la imagen del logo */
+}
+
+/* Barra de navegación */
+.navbar {
+    display: flex; /* Alinea elementos en fila */
+    justify-content: space-between; /* Distribuye elementos a los extremos */
+    align-items: center; /* Centra verticalmente */
+    padding: 0.5rem 1rem; /* Espaciado interno */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
+    background-color: var(--color-secundario); /* Fondo amarillo claro */
+}
+
+.navbar .navbar-nav {
+    display: flex;    /* Alinea elementos en fila */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    gap: 20px; /* Espaciado entre elementos */
+}
+
+.navbar .nav-link {
+    font-size: 1.1rem; /* Tamaño del texto */
+    color: var(--color-texto); /* Color del texto */
+    padding: 10px 15px; /* Espaciado interno */
+    transition: background-color 0.3s; /* Transición suave al pasar el mouse */
+    text-decoration: none; /* Elimina subrayado */
+    border-radius: 8px;
+}
+
+.navbar .nav-link:hover {
+    background-color: var(--color-terciario); /* Fondo rosa claro al pasar el mouse */
+    color: var(--color-texto-claro); /* Texto blanco al pasar el mouse */
+}
+
+/* Estilo unificado para los botones de la barra de navegación */
+.btn-nav {
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 1rem; /* Tamaño del texto */
+    font-weight: bold; /* Texto en negrita */
+    text-align: center; /* Centrar el texto */
+    border: 2px solid var(--color-primario); /* Borde rojo oscuro */
+    background-color: transparent; /* Fondo transparente */
+    color: var(--color-primario); /* Texto rojo oscuro */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+}
+
+.btn-nav:hover {
+    background-color: var(--color-primario); /* Fondo rojo oscuro al pasar el mouse */
+    color: var(--color-texto-claro); /* Texto blanco al pasar el mouse */
+}
+
+/* ==========================
+   ENCABEZADO PRINCIPAL
+   ========================== */
+.header {
+    background-color: var(--color-secundario); /* Fondo amarillo claro */
+    color: var(--color-texto); /* Texto oscuro */
+    margin-top: 60px;
+}
+
+.header .title {
+    color: var(--color-primario); /* Título en rojo oscuro */
+    font-weight: 800; /* Grosor del texto */
+    font-size: 4rem; /* Tamaño del texto */
+}
+
+.header .subtitle {
+    color: var(--color-texto); /* Subtítulo en texto oscuro */
+    font-weight: 600; /* Grosor del subtítulo */
+    font-size: 1.5rem; /* Tamaño del subtítulo */
+}
+
+/* Botones principales */
+.btm-home .btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 10px;
+    transition: background-color 0.3s;
+}
+
+.btm-home .btn-primary {
+    background-color: #fff;
+    color: var(--color-texto);
+    border: 1px solid var(--color-texto);
+}
+
+.btm-home .btn-primary:hover {
+    background-color: #f0f0f0;
+}
+
+.btm-home .btn-danger {
+    background-color: var(--color-primario);
+    color: var(--color-texto-claro);
+}
+.btm-home .btn-danger:hover {
+    background-color: var(--color-terciario);
+    color: var(--color-texto);
+} 
+
+/* ==========================
+   SECCIÓN DE CARRUSEL
+   ========================== */
+#carrusel {
+    padding: 20px;
+}
+
+#carrusel .carousel-item {
+    border-radius: 30px; /* Bordes redondeados */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+    overflow: hidden; /* Evita que el contenido se desborde */
+    background-color: #fff; /* Fondo blanco */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+}
+
+#carrusel .carousel-item:hover {
+    transform: scale(1.05); /* Efecto de zoom */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Sombra más intensa */
+}
+
+/* Sección de presentación */
+#presentacion {
+    background: var(--color-secundario);
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-primario);
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+
+.section-description {
+    font-size: 1.5rem;
+    color: #555;
+    line-height: 2;
+    margin-bottom: 40px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify;
+}
+
+.section-description span {
+    color: var(--color-primario);
+    font-weight: 700;
+}
+
+.call-to-action {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--color-texto);
+    margin-top: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background-color: var(--color-primario);
+    color: var(--color-texto-claro);
+    padding: 15px 30px;
+    border-radius: 10px;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.call-to-action:hover {
+    background-color: var(--color-terciario);
+    transform: scale(1.05);
+}
+
+/* Estilo para el texto de llamada a la acción */
+.call-to-action-text {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-primario); /* Color inicial del texto */
+    text-align: center;
+    background: var(--color-secundario); /* Color inicial del fondo */
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 30px;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.call-to-action-text:hover {
+    background: var(--color-primario); /* Color del fondo al pasar el mouse */
+    color: var(--color-texto-claro); /* Color del texto al pasar el mouse */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+}
+
+/* Sección de nosotros */
+.nosotros .card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    margin: 10px auto; /* Centra las tarjetas horizontalmente */
+    max-width: 300px; /* Limita el ancho de las tarjetas */
+    text-align: center; /* Centra el contenido de las tarjetas */
+}
+
+.nosotros .card:hover {
+    transform: scale(1.05);
+}
+
+.nosotros .icon img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Tarjetas con efecto de volteo */
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 200px;
+    perspective: 1000px;
+    margin-bottom: 20px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.flip-card-front {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.flip-card-front img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.flip-card-front .icon-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-texto);
+}
+
+.flip-card-back {
+    background-color: var(--color-primario);
+    color: var(--color-texto-claro);
+    transform: rotateY(180deg);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 15px;
+}
+
+.flip-card-back .icon-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.flip-card-back .icon-text {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* ==========================
+   PIE DE PÁGINA
+   ========================== */
+#footer {
+    background-color: var(--color-texto); /* Fondo oscuro */
+    color: var(--color-texto-claro); /* Texto claro */
+    padding: 40px 20px;
+    display: flex;
+    justify-content: space-between; /* Distribuye los elementos del pie de página */
+    align-items: center;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
+    text-align: center; /* Centra el texto en pantallas pequeñas */
+}
+
+/* Alinear la sección "Información" hacia la izquierda */
+#footer .informacion {
+    text-align: left; /* Alinea el texto hacia la izquierda */
+    margin: 0; 
+    padding: 0 20px; 
+    max-width: 100%; /* Asegura que ocupe todo el ancho disponible */
+}
+
+/* Ajustar el título de la sección */
+#footer .informacion h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primario);
+    margin-bottom: 20px;
+}
+
+/* Ajustar los párrafos */
+#footer .informacion p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--color-gris);
+    margin: 5px 0; /* Espaciado entre párrafos */
+}
+
+/* Resaltar texto importante */
+#footer .informacion strong {
+    color: var(--color-texto-claro);
+}
+
+.footer-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primario);
+}
+
+.footer-text {
+    font-size: 0.9rem;
+    color: var(--color-texto-claro);
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icon img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.social-icon img:hover {
+    transform: scale(1.1);
+}
+
+/* ==========================
+   ESTILOS RESPONSIVOS
+   ========================== */
+@media (max-width: 768px) {
+    .head {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar .navbar-nav {
+        flex-direction: column; /* Coloca los elementos del menú en una columna */
+        gap: 15px; /* Reduce el espaciado en pantallas pequeñas */
+    }
+
+    .navbar .nav-link {
+        font-size: 1rem;
+        padding: 8px 10px;
+    }
+
+    .btn-login, .btn-register {
+        margin-left: 0; /* Elimina el margen entre botones en pantallas pequeñas */
+        width: 100%; /* Los botones ocupan todo el ancho */
+    }
+
+    .btm-home .btn {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    #footer {
+        flex-direction: column; /* Coloca los elementos del pie de página en una columna */
+        text-align: center; /* Centra el texto */
+    }
+
+    .nosotros .card {
+        max-width: 100%; /* Las tarjetas ocupan todo el ancho disponible */
+    }
+}
+
+/* Habilitar desplazamiento suave */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Estilo para los elementos del carrusel */
+.carousel-item {
+    border-radius: 30px; /* Bordes redondeados */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+    overflow: hidden; /* Evita que el contenido se desborde */
+    background-color: #fff; /* Fondo blanco */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+}
+
+/* Efecto al pasar el mouse sobre los elementos del carrusel */
+.carousel-item:hover {
+    transform: scale(1.05); /* Efecto de zoom */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Sombra más intensa */
+}
+
+/* ==========================
+   LOGIN Y REGISTRO UNIFICADOS
+   ========================== */
+
+   .auth-container {
+    background-color: var(--color-fondo);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.auth-box {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+}
+
+.auth-box h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-primario);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.auth-box label {
+    color: var(--color-texto);
+    font-weight: 600;
+}
+
+.auth-box .form-control {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid var(--color-borde);
+}
+
+.auth-box .btn {
+    background-color: var(--color-primario);
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.auth-box .btn:hover {
+    background-color: var(--color-terciario);
+    color: var(--color-texto-claro);
+}
+
+.auth-box .extra-links {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+/* Inputs */
+.login-box .form-control, .register-box .form-control {
+    border-radius: 10px; /* Bordes redondeados */
+    border: 1px solid var(--color-secundario); /* Borde amarillo claro */
+    padding: 10px;
+    font-size: 1rem;
+}
+
+.login-box .form-control:focus, .register-box .form-control:focus {
+    border-color: var(--color-primario); /* Borde rojo oscuro */
+    box-shadow: 0 0 8px rgba(153, 21, 78, 0.5); /* Sombra */
+    outline: none;
+}
+
+/* ==========================
+   ESTILOS MEJORADOS PARA LAS TARJETAS DE PRODUCTOS
+   ========================== */
+
+
+
+
+   .producto-card {
+    border: none; /* Elimina el borde predeterminado */
+    border-radius: 15px; /* Bordes más redondeados */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Sombra más suave */
+    overflow: hidden; /* Evita que el contenido se desborde */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff; /* Fondo blanco */
+}
+
+.producto-card:hover {
+    transform: translateY(-10px); /* Efecto de elevación */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+}
+
+/* Imagen de la tarjeta */
+.producto-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    transition: transform 0.3s ease; /* Efecto de zoom */
+}
+
+.producto-card:hover img {
+    transform: scale(1.05); /* Zoom al pasar el mouse */
+}
+
+/* Título del producto */
+.producto-card .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-primario); /* Usa el color principal */
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Descripción del producto */
+.producto-card .card-text {
+    font-size: 1rem;
+    color: #666; /* Texto gris */
+    text-align: justify;
+    margin: 10px 15px;
+}
+
+/* Precio del producto */
+.producto-card .card-text strong {
+    font-size: 1.2rem;
+    color: var(--color-primario); /* Destaca el precio */
+    display: inline; /* Asegura que esté en la misma línea */
+    margin-right: 5px; /* Espaciado entre "Precio:" y el valor */
+}
+
+.producto-card .card-text span {
+    font-size: 1.2rem;
+    color: #666; /* Color del valor del precio */
+    display: inline; /* Asegura que esté en la misma línea */
+}
+
+/* Botón de compra */
+.producto-card .btn-comprar {
+    display: block;
+    margin: 15px auto;
+    padding: 10px 20px;
+    background-color: var(--color-primario); /* Fondo rojo oscuro */
+    color: var(--color-texto-claro); /* Texto blanco */
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.producto-card .btn-comprar:hover {
+    background-color: var(--color-terciario); /* Fondo rosa claro */
+    transform: scale(1.05); /* Efecto de zoom */
+}
+
+/* Centrar el botón "Agregar al carrito" y bajarlo un poco más */
+.producto-card .btn-agregar-carrito {
+    display: block;
+    margin: 25px auto; /* Aumenta el margen superior e inferior */
+    text-align: center; /* Asegura que el texto esté centrado */
+}
+
+/* Fondo para la sección de productos */
+#productos-container {
+    background-color: var(--color-secundario); /* Fondo amarillo claro */
+    padding: 40px 20px;
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+.cantidad-producto {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+
+
+/* Hace que las flechas del select sean más visibles */
+.cantidad-producto {
+    background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%);
+    background-position: calc(100% - 20px) calc(1em - 10px), calc(100% - 10px) calc(1em - 10px), calc(100% - 20px) calc(1em + 10px);
+    background-size: 5px 5px, 5px 5px, 5px 5px;
+    background-repeat: no-repeat;
+}
+
+/* ==========================
+   FORMULARIO DE CONTACTO
+   ========================== */
+
+/* Estilo para el título del formulario */
+.titulo-contacto {
+    font-size: 2.5rem;
+    color: var(--color-primario); 
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Estilo para el formulario */
+.formulario-contacto {
+    background-color: rgb(255, 255, 255); /* Fondo claro relacionado con tu web */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    max-width: 600px;
+}
+
+/* Estilo para las etiquetas */
+.formulario-contacto .form-label {
+    font-weight: bold;
+    color: var(--color-texto); /* Color de texto relacionado con tu web */
+}
+
+/* Estilo para los campos de entrada */
+.formulario-contacto .form-control {
+    border: 1px solid var(--color-borde); /* Color del borde */
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* ← SOMBRA */
+}
+
+/* Estilo para el botón de envío */
+.btn-enviar {
+    background-color: var(--color-primario); /* Color principal */
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-enviar:hover {
+    background-color: var(--color-secundario); /* Color secundario al pasar el mouse */
+}
+
+#preview img {
+    border: 2px solid var(--color-borde, #ccc);
+    border-radius: 10px;
+    padding: 5px;
+}
+
+/* ==========================
+   IMAGEN ADJUNTA EN FORMULARIO DE CONTACTO
+   ========================== */
+
+/* Input de archivo con estilo */
+.formulario-contacto .form-control-file {
+    border: 2px dashed var(--color-primario); /* Borde punteado */
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.formulario-contacto .form-control-file:hover {
+    border-color: var(--color-secundario);
+    background-color: #fdf4e3;
+}
+
+/* Etiqueta del campo de imagen */
+.formulario-contacto label[for="imagen"] {
+    font-weight: 600;
+    color: var(--color-texto);
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* ==========================
+   CAMBIO DE CONTRASEÑA
+   ========================== */
+   .cambio-container {
+    background-color: var(--color-secundario);
+    padding: 40px 20px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cambio-box {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 100%;
+}
+
+.cambio-box h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--color-primario);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.cambio-box label {
+    font-weight: bold;
+    color: var(--color-texto);
+}
+
+.cambio-box .form-control {
+    border-radius: 10px;
+    border: 1px solid var(--color-secundario);
+    padding: 10px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.cambio-box .btn {
+    background-color: var(--color-primario);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.cambio-box .btn:hover {
+    background-color: var(--color-terciario);
+    color: var(--color-texto);
+}
+
+/* ==========================
+   ADMIN - GESTIÓN DE PRODUCTOS
+   ========================== */
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--color-fondo);
+  margin: 0;
+  padding: 2rem;
+  color: var(--color-texto);
+}
+
+h1, h2 {
+  text-align: center;
+  color: var(--color-primario);
+  margin-bottom: 2rem;
+}
+
+/* Formulario de productos */
+form#form-agregar {
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+form#form-agregar input,
+form#form-agregar textarea,
+form#form-agregar select {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border: 1px solid var(--color-gris-oscuro);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+form#form-agregar input[type="file"] {
+  padding: 0.5rem;
+  background-color: #f9f9f9;
+}
+
+form#form-agregar button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--color-primario);
+  color: #fff;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form#form-agregar button:hover {
+  background-color: var(--color-terciario);
+  color: var(--color-texto);
+}
+
+/* Lista de productos */
+#lista-productos {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+#lista-productos p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: var(--color-texto);
+}
+
+#lista-productos button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+#lista-productos button:hover {
+  background-color: #bd2130;
+}
+
+/* Botón admin reutilizable */
+.btn-admin {
+  background-color: white;
+  color: var(--color-primario);
+  margin-left: 0.9rem;
+}
+.btn-admin:hover {
+  background-color: white;
+}
+
+#form-agregar button {
+  margin-bottom: 10px;
+}
+
+
+  body {
+    font-family: 'Poppins', sans-serif; /* Fuente principal */
+    margin: 0; /* Elimina márgenes predeterminados */
+    padding: 0; /* Elimina relleno predeterminado */
+    background-color: var(--color-fondo); /* Fondo general */
+    color: var(--color-texto); /* Color del texto */
+    overflow-x: hidden; /* Evita desbordamiento horizontal */
+}
+
+
+
+
+/* styles.css */
+
+/* Ajuste para el cuerpo si usas navbar fija (ya lo podrías tener) */
+body {
+    padding-top: 70px; /* Ajusta según la altura de tu navbar */
+    font-family: 'Poppins', sans-serif; /* Aplicando la fuente Poppins globalmente */
+}
+
+/* Estilos para la tarjeta de producto */
+.product-card {
+    border: 1px solid #e9ecef; /* Un borde sutil */
+    border-radius: 0.5rem;     /* Bordes redondeados */
+    transition: box-shadow 0.3s ease-in-out;
+    display: flex; /* Para asegurar que el card-body se expanda si es necesario */
+    flex-direction: column;
+    background-color: #f8f8f8;
+}
+
+.product-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Sombra al pasar el mouse */
+}
+
+/* Contenedor de la imagen dentro de la tarjeta */
+.product-image-container {
+    width: 100%;
+    height: 220px; /* ALTURA FIJA para el espacio de la imagen. ¡AJUSTA ESTE VALOR! */
+                   /* Prueba con 180px, 200px, 250px, etc., hasta que te guste */
+    padding: 15px; /* Espacio interno para que la imagen "respire" */
+    box-sizing: border-box; /* El padding no aumenta el tamaño total */
+    display: flex;
+    justify-content: center; /* Centra la imagen horizontalmente */
+    align-items: center;   /* Centra la imagen verticalmente */
+    overflow: hidden;      /* Evita cualquier desbordamiento */
+    background-color: #7e7979; /* Fondo blanco para el contenedor de la imagen */
+    border-top-left-radius: 0.5rem; /* Redondea esquinas si la imagen no es la superior directa */
+    border-top-right-radius: 0.5rem;
+}
+
+/* Estilo para la imagen del producto en sí */
+.product-image { /* Esta clase debe estar en tu etiqueta <img> */
+    max-width: 100%;   /* La imagen no será más ancha que el .product-image-container (después del padding) */
+    max-height: 100%;  /* La imagen no será más alta que el .product-image-container (después del padding) */
+    width: auto;       /* El ancho se ajusta para mantener la proporción */
+    height: auto;      /* La altura se ajusta para mantener la proporción */
+    object-fit: contain; /* ASEGURA QUE TODA LA IMAGEN SEA VISIBLE, manteniendo proporciones. */
+                         /* Puede dejar espacio vacío si la proporción de la img no coincide con la del contenedor. */
+    display: block;
+}
+
+.product-card .card-body {
+    padding: 1rem;
+    text-align: center; /* Centra el texto si lo deseas */
+    flex-grow: 1; /* Permite que el cuerpo de la tarjeta crezca para llenar el espacio si usas h-100 */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Espacia los elementos internos */
+}
+
+.product-card .card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.product-card .card-text {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+}
+
+.product-card .btn-primary,
+.product-card .btn { /* Estilo para el botón de agregar al carrito */
+    background-color: #D8BFD8; /* Un color lila/lavanda suave, ajústalo */
+    border-color: #D8BFD8;
+    color: #333; /* Color de texto oscuro para contraste */
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 0.3rem;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    margin-top: auto; /* Empuja el botón hacia abajo si hay espacio extra */
+}
+
+.product-card .btn-primary:hover,
+.product-card .btn:hover {
+    background-color: #C9A2C9; /* Un tono más oscuro al pasar el mouse */
+    border-color: #C9A2C9;
+    color: #fff;
+}
+
+/* Ajustes para los inputs de cantidad si los tienes visibles en la tarjeta de producto */
+.product-card .form-control {
+    max-width: 80px; /* Limita el ancho del input de cantidad */
+    margin: 0.5rem auto; /* Centra el input */
+    text-align: center;
+}
+
+/* Otros estilos de tu navbar y footer que ya tienes */
+  
+
+  /* ==========================
+   ESTILOS PARA EL CARRITO DE COMPRAS (AJUSTADO PARA carrito.html)
+   ========================== */
+
+/* Contenedor principal del carrito */
+/* Usamos .container para el padding de Bootstrap, pero añadimos nuestro estilo de fondo/sombra */
+.container.mt-5.pt-5 {
+    /* Si quieres un fondo blanco y sombra para todo el contenido del carrito,
+       aplica aquí o dentro de un div que envuelva la tabla y botones */
+    /* background-color: #fff; */
+    /* border-radius: 15px; */
+    /* box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); */
+    /* padding: 30px; */
+    /* margin-bottom: 30px; */
+}
+
+/* El div que contiene la tabla responsive */
+#carrito-container {
+    background-color: #fff; /* Fondo blanco para la sección de la tabla */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Sombra suave para que resalte */
+    padding: 20px; /* Espaciado interno, un poco menos que el contenedor general */
+    margin-bottom: 20px; /* Espacio debajo de la tabla */
+}
+
+/* Título del carrito (el h1 vacío en tu HTML, asumo que JavaScript lo llena) */
+/* Si lo vas a llenar con JS, asegúrate de que el JS le agregue texto */
+.container.mt-5.pt-5 h1 { /* Para el h1 directo dentro del container */
+    font-size: 2.2rem;
+    color: var(--color-primario); /* Color principal para el título */
+    text-align: center;
+    margin-bottom: 30px; /* Puedes ajustar este margin */
+    font-weight: 700;
+}
+
+/* Estilo general de la tabla */
+.table.table-bordered.text-center { /* Usa estas clases directas de tu HTML */
+    width: 100%;
+    border-collapse: separate; /* Permite border-spacing */
+    border-spacing: 0 10px; /* Espaciado entre filas para un look más moderno */
+    margin-bottom: 0; /* Ya no necesitamos margen aquí si lo tiene el contenedor */
+    border: none; /* Elimina los bordes feos de Bootstrap */
+}
+
+/* Encabezado de la tabla */
+.table-cart thead.thead-dark { /* Usa thead-dark de Bootstrap y agrega nuestros estilos */
+    background-color: var(--color-primario); /* Fondo oscuro principal */
+    color: var(--color-texto-claro); /* Texto claro */
+    border-radius: 10px; /* Bordes redondeados para el encabezado */
+    overflow: hidden; /* Para que los border-radius funcionen bien con el color de fondo */
+}
+
+.table-cart thead th {
+    padding: 15px;
+    text-align: center; /* Centrar los encabezados como en la imagen */
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none; /* Elimina los bordes entre thead y tbody */
+}
+
+/* Bordes redondeados para thead */
+.table-cart thead th:first-child {
+    border-top-left-radius: 10px;
+}
+.table-cart thead th:last-child {
+    border-top-right-radius: 10px;
+}
+
+/* Cuerpo de la tabla (filas de productos) */
+#carrito-items tr { /* Selecciona las filas dentro del tbody */
+    background-color: #fcfcfc; /* Fondo ligeramente diferente para filas */
+    border-radius: 10px; /* Bordes redondeados para filas individuales */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Sombra sutil para cada fila */
+    transition: all 0.3s ease;
+}
+
+#carrito-items tr:hover {
+    background-color: #f5f5f5; /* Cambio de color al pasar el mouse */
+    transform: translateY(-3px); /* Efecto de elevación */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#carrito-items td {
+    padding: 15px;
+    vertical-align: middle; /* Alinea el contenido verticalmente */
+    color: var(--color-texto);
+    font-size: 1rem;
+    border: none; /* Elimina los bordes internos de las celdas */
+}
+
+/* Borde redondeado para la primera y última celda de cada fila (si es necesario) */
+#carrito-items tr td:first-child {
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+#carrito-items tr td:last-child {
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* Imagen del producto en la tabla */
+#carrito-items td img { /* Selecciona la imagen directamente en la celda del tbody */
+    width: 80px; /* Tamaño de la imagen */
+    height: 80px;
+    object-fit: contain; /* Asegura que la imagen completa sea visible sin recortarse */
+    border: 1px solid var(--color-gris); /* Borde sutil */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 5px; /* Espacio interno de la imagen */
+    background-color: #fff;
+}
+
+/* Dropdown de Cantidad (asumo que se carga dinámicamente) */
+/* Si usas la clase 'form-control' directamente en el select */
+#carrito-items select.form-control {
+    width: 80px; /* Ancho fijo para el select de cantidad */
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.25rem;
+    font-size: 0.9rem;
+    display: inline-block; /* Para que no ocupe todo el ancho */
+    margin: 0 auto; /* Centra el select si es posible */
+}
+
+/* Botón de eliminar en la tabla */
+#carrito-items .btn-danger { /* Bootstrap btn-danger */
+    background-color: #dc3545; /* Rojo de Bootstrap para eliminar */
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    margin-left: 5px; /* Pequeño espacio si hay otro elemento al lado */
+}
+
+#carrito-items .btn-danger:hover {
+    background-color: #c82333;
+}
+
+/* Contenedor de los botones de acción */
+.text-center.mt-4 { /* Usa estas clases directas de tu HTML */
+    display: flex; /* Para poner los botones en fila */
+    justify-content: center; /* Centra los botones */
+    gap: 20px; /* Espacio entre los botones */
+    margin-top: 30px !important; /* Asegura que haya margen superior */
+    padding-bottom: 20px; /* Espacio inferior */
+}
+
+/* Botón "Seguir comprando" */
+.text-center.mt-4 .btn-primary { /* Usa estas clases directas de tu HTML */
+    background-color: var(--color-terciario); /* Rosa claro */
+    color: var(--color-primario); /* Texto rojo oscuro */
+    border: 2px solid var(--color-primario); /* Borde rojo oscuro */
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-decoration: none; /* Asegura que los enlaces se vean como botones */
+}
+
+.text-center.mt-4 .btn-primary:hover {
+    background-color: var(--color-primario);
+    color: var(--color-texto-claro);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Botón "Finalizar Compra y Pagar" */
+#finalizar-compra-paypal-btn.btn-success { /* Usa el ID y la clase de tu HTML */
+    background-color: var(--color-primario); /* Rojo oscuro */
+    color: var(--color-texto-claro); /* Texto blanco */
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+#finalizar-compra-paypal-btn.btn-success:hover {
+    background-color: var(--color-terciario);
+    color: var(--color-primario);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Ajustes para el pie de página para que no se pegue al contenido del carrito */
+#footer {
+    margin-top: 50px; /* Añade un buen margen superior al footer */
+}
+
+/* Asegura que el body tenga padding top para la navbar fija */
+body {
+    padding-top: 70px; /* Ajusta según la altura de tu navbar */
+}
+
+  .btn-editar {
+    background-color: #4335dc;
+    color: white;
+    border  : none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+  
+  /* =========================================
+   ESTILOS PARA EL FORMULARIO DE EDICIÓN
+   ========================================= */
+
+/* Contenedor de toda la página para centrar el formulario */
+.edit-page-container {
+    background-color: var(--color-secundario); /* Tu fondo amarillo claro */
+    padding: 60px 20px;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* El "card" o caja que contiene el formulario */
+.form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Título del formulario */
+.form-container h1 {
+    text-align: center;
+    color: var(--color-primario); /* Tu rojo oscuro principal */
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+/* Estilos para las etiquetas (Nombre, Descripción, etc.) */
+.form-container .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+/* Estilos para los campos de texto y textarea */
+.form-container .form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-container .form-control:focus {
+    outline: none;
+    border-color: var(--color-primario);
+    box-shadow: 0 0 0 3px rgba(153, 21, 78, 0.2); /* Sombra con tu color primario */
+}
+
+/* Contenedor para diseño en fila (precio, cantidad, categoría) */
+.form-container .form-row {
+    display: flex;
+    gap: 20px;
+}
+.form-container .form-row .form-group {
+    flex: 1; /* Cada campo ocupa el mismo espacio */
+}
+
+/* Espaciado entre grupos de campos */
+.form-container .form-group {
+    margin-bottom: 20px;
+}
+
+/* Estilos para la sección de subida de imagen */
+.image-upload-box {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+#imagen-preview {
+    max-width: 120px;
+    height: 120px;
+    object-fit: contain;
+    border-radius: 8px;
+    border: 2px solid var(--color-gris);
+    background-color: #fff;
+}
+
+.form-container .form-control-file {
+    border: 2px dashed var(--color-gris-oscuro);
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.form-container .form-control-file:hover {
+    border-color: var(--color-primario);
+    background-color: #fdf4e3; /* Un amarillo muy pálido */
+}
+
+/* Contenedor de los botones de acción */
+.form-actions {
+    display: flex;
+    justify-content: flex-end; /* Alinea los botones a la derecha */
+    gap: 15px;
+    margin-top: 30px;
+    border-top: 1px solid var(--color-gris);
+    padding-top: 20px;
+}
+
+/* Estilo para los botones, basado en tus .btn-nav */
+.btn-actualizar, .btn-cancelar {
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+/* Botón principal de Actualizar */
+.btn-actualizar {
+    background-color: var(--color-primario);
+    color: var(--color-texto-claro);
+    border-color: var(--color-primario);
+}
+.btn-actualizar:hover {
+    background-color: #7a113e; /* Un tono más oscuro de tu primario */
+    border-color: #7a113e;
+    transform: translateY(-2px);
+}
+
+/* Botón secundario de Cancelar */
+.btn-cancelar {
+    background-color: transparent;
+    color: #555;
+    border-color: #ccc;
+}
+.btn-cancelar:hover {
+    background-color: #f1f1f1;
+    border-color: #aaa;
+}
+
+/* --- ESTILOS PARA ALINEAR TARJETAS DE PRODUCTO --- */
+
+/* 1. Convierte la tarjeta en un contenedor Flexbox vertical. */
+.producto-card {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 2. Empuja el pie de la tarjeta (con los botones) hacia el fondo. */
+.producto-card .card-footer {
+  margin-top: auto;
+  background-color: transparent; /* Opcional: para que no tenga fondo gris */
+  border-top: none; /* Opcional: para quitar la línea superior */
+}
+
+/* 3. Asegura que la columna de bootstrap también sea flex para que h-100 funcione bien en todos los navegadores */
+.d-flex {
+  display: flex !important;
+}
+
+
+
+
+
+
+

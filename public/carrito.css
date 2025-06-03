@@ -1,0 +1,205 @@
+/* ==========================
+   ESTILOS PARA EL CARRITO DE COMPRAS (AJUSTADO PARA carrito.html)
+   ========================== */
+
+/* Contenedor principal del carrito */
+/* Usamos .container para el padding de Bootstrap, pero añadimos nuestro estilo de fondo/sombra */
+.container.mt-5.pt-5 {
+  /* Si quieres un fondo blanco y sombra para todo el contenido del carrito,
+       aplica aquí o dentro de un div que envuelva la tabla y botones */
+  /* background-color: #fff; */
+  /* border-radius: 15px; */
+  /* box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); */
+  /* padding: 30px; */
+  /* margin-bottom: 30px; */
+}
+
+/* El div que contiene la tabla responsive */
+#carrito-container {
+  background-color: #fff; /* Fondo blanco para la sección de la tabla */
+  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Sombra suave para que resalte */
+  padding: 20px; /* Espaciado interno, un poco menos que el contenedor general */
+  margin-bottom: 20px; /* Espacio debajo de la tabla */
+}
+
+/* Título del carrito (el h1 vacío en tu HTML, asumo que JavaScript lo llena) */
+/* Si lo vas a llenar con JS, asegúrate de que el JS le agregue texto */
+.container.mt-5.pt-5 h1 {
+  /* Para el h1 directo dentro del container */
+  font-size: 2.2rem;
+  color: var(--color-primario); /* Color principal para el título */
+  text-align: center;
+  margin-bottom: 30px; /* Puedes ajustar este margin */
+  font-weight: 700;
+}
+
+/* Estilo general de la tabla */
+.table.table-bordered.text-center {
+  /* Usa estas clases directas de tu HTML */
+  width: 100%;
+  border-collapse: separate; /* Permite border-spacing */
+  border-spacing: 0 10px; /* Espaciado entre filas para un look más moderno */
+  margin-bottom: 0; /* Ya no necesitamos margen aquí si lo tiene el contenedor */
+  border: none; /* Elimina los bordes feos de Bootstrap */
+}
+
+/* Encabezado de la tabla */
+.table-cart thead.thead-dark {
+  /* Usa thead-dark de Bootstrap y agrega nuestros estilos */
+  background-color: var(--color-primario); /* Fondo oscuro principal */
+  color: var(--color-texto-claro); /* Texto claro */
+  border-radius: 10px; /* Bordes redondeados para el encabezado */
+  overflow: hidden; /* Para que los border-radius funcionen bien con el color de fondo */
+}
+
+.table-cart thead th {
+  padding: 15px;
+  text-align: center; /* Centrar los encabezados como en la imagen */
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none; /* Elimina los bordes entre thead y tbody */
+}
+
+/* Bordes redondeados para thead */
+.table-cart thead th:first-child {
+  border-top-left-radius: 10px;
+}
+.table-cart thead th:last-child {
+  border-top-right-radius: 10px;
+}
+
+/* Cuerpo de la tabla (filas de productos) */
+#carrito-items tr {
+  /* Selecciona las filas dentro del tbody */
+  background-color: #fcfcfc; /* Fondo ligeramente diferente para filas */
+  border-radius: 10px; /* Bordes redondeados para filas individuales */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Sombra sutil para cada fila */
+  transition: all 0.3s ease;
+}
+
+#carrito-items tr:hover {
+  background-color: #f5f5f5; /* Cambio de color al pasar el mouse */
+  transform: translateY(-3px); /* Efecto de elevación */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#carrito-items td {
+  padding: 15px;
+  vertical-align: middle; /* Alinea el contenido verticalmente */
+  color: var(--color-texto);
+  font-size: 1rem;
+  border: none; /* Elimina los bordes internos de las celdas */
+}
+
+/* Borde redondeado para la primera y última celda de cada fila (si es necesario) */
+#carrito-items tr td:first-child {
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+#carrito-items tr td:last-child {
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+/* Imagen del producto en la tabla */
+#carrito-items td img {
+  /* Selecciona la imagen directamente en la celda del tbody */
+  width: 80px; /* Tamaño de la imagen */
+  height: 80px;
+  object-fit: contain; /* Asegura que la imagen completa sea visible sin recortarse */
+  border: 1px solid var(--color-gris); /* Borde sutil */
+  border-radius: 8px; /* Bordes redondeados */
+  padding: 5px; /* Espacio interno de la imagen */
+  background-color: #fff;
+}
+
+/* Dropdown de Cantidad (asumo que se carga dinámicamente) */
+/* Si usas la clase 'form-control' directamente en el select */
+#carrito-items select.form-control {
+  width: 80px; /* Ancho fijo para el select de cantidad */
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.25rem;
+  font-size: 0.9rem;
+  display: inline-block; /* Para que no ocupe todo el ancho */
+  margin: 0 auto; /* Centra el select si es posible */
+}
+
+/* Botón de eliminar en la tabla */
+#carrito-items .btn-danger {
+  /* Bootstrap btn-danger */
+  background-color: #dc3545; /* Rojo de Bootstrap para eliminar */
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  margin-left: 5px; /* Pequeño espacio si hay otro elemento al lado */
+}
+
+#carrito-items .btn-danger:hover {
+  background-color: #c82333;
+}
+
+/* Contenedor de los botones de acción */
+.text-center.mt-4 {
+  /* Usa estas clases directas de tu HTML */
+  display: flex; /* Para poner los botones en fila */
+  justify-content: center; /* Centra los botones */
+  gap: 20px; /* Espacio entre los botones */
+  margin-top: 30px !important; /* Asegura que haya margen superior */
+  padding-bottom: 20px; /* Espacio inferior */
+}
+
+/* Botón "Seguir comprando" */
+.text-center.mt-4 .btn-primary {
+  /* Usa estas clases directas de tu HTML */
+  background-color: var(--color-terciario); /* Rosa claro */
+  color: var(--color-primario); /* Texto rojo oscuro */
+  border: 2px solid var(--color-primario); /* Borde rojo oscuro */
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  text-decoration: none; /* Asegura que los enlaces se vean como botones */
+}
+
+.text-center.mt-4 .btn-primary:hover {
+  background-color: var(--color-primario);
+  color: var(--color-texto-claro);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Botón "Finalizar Compra y Pagar" */
+#finalizar-compra-paypal-btn.btn-success {
+  /* Usa el ID y la clase de tu HTML */
+  background-color: var(--color-primario); /* Rojo oscuro */
+  color: var(--color-texto-claro); /* Texto blanco */
+  border: none;
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+#finalizar-compra-paypal-btn.btn-success:hover {
+  background-color: var(--color-terciario);
+  color: var(--color-primario);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Ajustes para el pie de página para que no se pegue al contenido del carrito */
+#footer {
+  margin-top: 50px; /* Añade un buen margen superior al footer */
+}
+
+/* Asegura que el body tenga padding top para la navbar fija */
+body {
+  padding-top: 70px; /* Ajusta según la altura de tu navbar */
+}

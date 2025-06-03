@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gracias por tu compra - Gracia Sublime</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(#FFE898 100%);
+      padding-top: 100px;
+      min-height: 100vh;
+    }
+
+    .thankyou-container {
+      max-width: 700px;
+      margin: auto;
+      background: #fff;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .thankyou-container h1 {
+      font-weight: 700;
+      color: #a01441;
+      margin-bottom: 20px;
+    }
+
+    .thankyou-container p {
+      font-size: 1.1rem;
+      color: #444;
+    }
+
+    .thankyou-container em {
+      color: #6c757d;
+      font-size: 0.95rem;
+    }
+
+    .btn-primary {
+      background-color: #a01441;
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background-color: #870e36;
+    }
+
+    .check-icon {
+      font-size: 60px;
+      color: #28a745;
+      margin-bottom: 20px;
+    }
+
+    .navbar {
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo-img {
+      height: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <img src="/Imagenes/Logo.png" alt="Logo" class="logo-img">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="productos.html">Productos</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CONTENIDO -->
+  <div class="thankyou-container mt-5">
+    <div class="check-icon"><i class="fas fa-check-circle"></i></div>
+    <h1>¡Gracias por tu compra!</h1>
+    <p>Tu pago está siendo procesado por PayPal.</p>
+    <p>Recibirás una confirmación en tu correo electrónico en breve.</p>
+    <p class="mt-3"><em>(Para una implementación completa, el estado de tu pedido se actualizaría automáticamente en nuestro sistema. Por ahora, procesaremos tu pedido una vez que PayPal confirme el pago).</em></p>
+    <a href="/index.html" class="btn btn-primary mt-4 px-4 py-2">Volver a la Tienda</a>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

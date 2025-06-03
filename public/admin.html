@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Administrador - Productos</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h1>Gestión de productos</h1>
+  
+  <form id="form-agregar" enctype="multipart/form-data">
+    <input type="text" name="nombre" placeholder="Nombre" required />
+    <textarea name="descripcion" placeholder="Descripción" required></textarea>
+    <input type="number" name="precio" placeholder="Precio" step="0.01" required />
+    <input type="number" name="cantidad" placeholder="Cantidad" required />
+    <select name="categoria" required>
+      <option value="tazas">Tazas</option>
+      <option value="ropa">Ropa</option>
+    </select>
+
+    <!-- NUEVO CAMPO DE TALLAS -->
+   <input type="text" name="tallas_disponibles" placeholder="Tallas disponibles (ej: S,M,L,XL)" required />
+
+
+    <input type="file" name="imagen" required />
+    <button type="submit" class="btn btn-nav mb-2">Agregar producto</button>
+    <button type="button" class="btn btn-nav" onclick="window.location.href='index.html'">Regresar</button>
+  </form>
+
+  <hr />
+
+  <h2>Productos actuales</h2>
+  <div id="lista-productos"></div>
+
+  <script src="admin.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
